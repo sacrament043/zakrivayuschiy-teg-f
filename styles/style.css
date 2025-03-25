@@ -16,9 +16,7 @@
   font-family: var(--font-main, sans-serif);
   font-variation-settings: var(--font-weight-card-text);
   text-align: center;
-
   background: repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px), repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px), linear-gradient(to bottom, #e7e7e7, #1a1a1a);
-
   background-size: cover;
   background-attachment: fixed;
   display: flex;
@@ -401,17 +399,13 @@
   animation: fill 0.3 ease-in 0.06s;
 }
 
-.like-icon.is-liked .sparks {
-  fill: var(--fill-color-heart);
-  animation: spakrs 0.3s ease-in 0.3s;
-}
-
 .like-icon.is-liked .heart {
   transform-origin: center;
   animation: heart 0.3s ease-in 0.1s;
 }
 
 .like-icon.is-liked .sparks {
+  fill: var(--fill-color-heart);
   animation: sparks 0.3s ease-in 0.3s;
 }
 
