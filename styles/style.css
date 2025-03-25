@@ -36,6 +36,9 @@
   padding-inline: clamp(0.875rem, -1.469rem + 10vw, 7.531rem);
   padding-block: clamp(7.5rem, 7.324rem + 0.751vw, 8rem);
   width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .header-title {
@@ -55,12 +58,6 @@
   background-color: white;
   border: 2px solid rgba(0, 0, 0, 1);
   margin-bottom: 50px;
-}
-
-.header-block {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .card-title {
@@ -213,13 +210,9 @@
 }
 
 .footer__icon-button {
-  background-color: rgba(255, 255, 255, 1);
-  outline: 2px solid rgba(0, 0, 0, 1);
-  width: clamp(19.125rem, 18.487rem + 2.723vw, 20.938rem);
   margin-bottom: 103px;
   margin-right: clamp(2.156rem, -9.232rem + 48.592vw, 34.5rem);
   margin-left: clamp(2.156rem, -9.232rem + 48.592vw, 34.5rem);
-
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 19px;
@@ -344,11 +337,6 @@
 }
 .image-experience {
   filter: blur(1px) brightness(0.5) grayscale(30%);
-}
-
-@media (width <= 375px) {
-  .page {
-  }
 }
 
 .main-body {
