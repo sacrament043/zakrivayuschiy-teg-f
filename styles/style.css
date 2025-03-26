@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-main, sans-serif);
-  font-variation-settings: var(--font-weight-card-text);
+  font-variation-settings: "wght" 400;
   text-align: center;
   background: repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px), repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px), linear-gradient(to bottom, #e7e7e7, #1a1a1a);
   background-size: cover;
@@ -27,6 +27,7 @@
 
 .header-block {
   font-family: var(--font-accent);
+  font-weight: 400;
   background-color: white;
   border: 2px solid rgba(0, 0, 0, 1);
   margin-inline: clamp(0rem, -8.187rem + 34.93vw, 23.25rem);
@@ -41,6 +42,7 @@
 
 .header-title {
   font-size: clamp(3.063rem, 2.348rem + 1.905vw, 4.063rem);
+  text-transform: uppercase;
 }
 
 .header-text {
@@ -55,19 +57,30 @@
   margin-inline: clamp(0rem, -8.187rem + 34.93vw, 23.25rem);
   background-color: white;
   border: 2px solid rgba(0, 0, 0, 1);
-  margin-bottom: 50px;
+  margin-bottom: 49px;
+}
+
+.card-title-block {
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+
+.card-description-block {
+  border-top: 2px solid black;
+  width: 100%;
 }
 
 .card-title {
   font-family: var(--font-main);
-  font-weight: var(--font-weight-card-title);
+  font-variation-settings: "wght" 700;
   line-height: 100%;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   vertical-align: middle;
   justify-self: start;
   margin-top: 6px;
   margin-bottom: 9px;
   margin-left: 10px;
+  margin-right: 10px;
   max-width: 662px;
   text-align: left;
   font-size: var(--font-size);
@@ -75,6 +88,7 @@
 }
 
 .card-image {
+  max-height: clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);
   position: relative;
 }
 
@@ -89,12 +103,10 @@
   line-height: 100%;
   text-transform: uppercase;
   z-index: 1;
-
   font-weight: 400;
   color: black;
   mix-blend-mode: hard-light;
   opacity: 0.5;
-  -webkit-text-stroke: 1px white;
 }
 
 @supports (-webkit-text-stroke: 1px white) {
@@ -126,31 +138,47 @@
 }
 
 .card-description {
+  line-height: 21px;
   text-align: left;
   width: 100%;
-  padding-top: 24px;
+  padding-top: 25px;
   padding-right: 25px;
   padding-left: 25px;
   font-size: var(--font-size);
   text-shadow: 2px 2px 4px rgba(223, 30, 181, 0.6);
 }
 
-.card :nth-child(4) {
+.card-description-my-text {
   padding-top: 27px;
-  padding-bottom: 23px;
+  padding-bottom: 24px;
 }
 
 .card__icon-button {
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  height: 38px;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: black;
+}
+
+.card-block__icon-button {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-
   gap: 5px;
   width: 100%;
   padding-right: 25px;
   padding-bottom: 28px;
-  cursor: pointer;
 }
 
 .button__text {
@@ -161,31 +189,34 @@
   line-height: 90%;
   font-weight: 400;
   letter-spacing: 0px;
-
   mix-blend-mode: difference;
 }
 
 .card__like-button {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: white;
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 37px;
   padding-right: 37px;
-  border: 2px solid rgba(0, 0, 0, 1);
-  max-width: 126px;
-  position: relative;
-  cursor: pointer;
+  max-width: 130px;
   text-align: center;
   height: 38px;
   max-height: 100%;
-  color: white;
   overflow: hidden;
 }
 
-.card__like-button::before {
+.card-and-footer__icon_like-button {
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+
+.card-and-footer__icon_like-button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -198,52 +229,28 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.card__like-button:hover::before {
+.card-and-footer__icon_like-button:hover::before {
   transform: scaleX(1);
 }
 
 .card__like-button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
+  transition: box-shadow 0.3s ease;
 }
 
 .footer__icon-button {
   margin-bottom: 103px;
-  margin-right: clamp(2.156rem, -9.232rem + 48.592vw, 34.5rem);
-  margin-left: clamp(2.156rem, -9.232rem + 48.592vw, 34.5rem);
+  margin-right: auto;
+  margin-left: auto;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 19px;
   padding-right: 21px;
-  cursor: pointer;
-  background-color: white;
-  border: 2px solid rgba(0, 0, 0, 1);
   outline: none;
-  display: flex;
   flex-direction: row;
-  align-items: center;
-  position: relative;
-  gap: 8px;
   max-width: 339px;
   width: 100%;
-  color: white;
-}
-
-.footer__icon-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 1);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
-}
-
-.footer__icon-button:hover::before {
-  transform: scaleX(1);
 }
 
 .footer__icon-button:focus-visible {
@@ -256,8 +263,9 @@
   flex-direction: column;
   align-items: center;
   border: 2px solid rgba(0, 0, 0, 1);
-  width: clamp(21.313rem, 21.048rem + 1.127vw, 22.063rem);
+  width: clamp(21.313rem, 20.96rem + 1.502vw, 22.313rem);
   overflow-x: hidden;
+  padding: 0px;
 }
 
 .window::backdrop {
@@ -273,7 +281,7 @@
   margin-right: 30px;
   gap: 20px;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   width: clamp(17.188rem, 16.791rem + 1.69vw, 18.313rem);
 }
 
@@ -285,6 +293,8 @@
   letter-spacing: 0px;
   text-transform: uppercase;
   text-align: left;
+  max-width: 234px;
+  width: 100%;
 }
 
 .icon-floppy-window {
@@ -293,16 +303,18 @@
 }
 
 .icon-floppy {
+  z-index: 1;
+  flex-shrink: 0;
+  width: 21px;
+  height: 21px;
   mix-blend-mode: difference;
-  filter: brightness(0) invert(1);
 }
 
 .window-close {
-  background-color: transparent;
-  width: clamp(17.188rem, 16.791rem + 1.69vw, 18.313rem);
+  width: clamp(16.063rem, 15.27rem + 3.38vw, 18.313rem);
+  max-width: 293px;
   margin-top: 30px;
   margin-bottom: 30px;
-  cursor: pointer;
 }
 
 .window-close-text {
@@ -315,6 +327,7 @@
   text-transform: uppercase;
   padding-top: 12.5px;
   padding-bottom: 12.5px;
+  mix-blend-mode: difference;
 }
 
 .image-list {
@@ -416,5 +429,29 @@
     margin: auto;
     margin-bottom: 100px;
     margin-top: 52px;
+    max-width: 310px;
+    width: 100%;
+  }
+
+  .card-image-label {
+    right: 3px;
+  }
+
+  .icon-floppy {
+    width: 28px;
+    height: 28px;
+  }
+
+  .window {
+    max-width: 341px;
+    width: 100%;
+    max-height: 191px;
+    height: 100%;
+    overflow-y: hidden;
+  }
+
+  .window-icon-text {
+    max-width: 257px;
+    width: 100%;
   }
 }
