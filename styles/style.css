@@ -23,6 +23,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 .header-block {
@@ -30,7 +31,7 @@
   font-weight: 400;
   background-color: white;
   border: 2px solid rgba(0, 0, 0, 1);
-  margin-inline: clamp(0rem, -8.187rem + 34.93vw, 23.25rem);
+  margin-inline: auto;
   margin-block: 100px;
   padding-inline: clamp(0.875rem, -1.469rem + 10vw, 7.531rem);
   padding-block: clamp(7.5rem, 7.324rem + 0.751vw, 8rem);
@@ -54,10 +55,10 @@
   display: grid;
   place-items: center;
   width: clamp(23.438rem, 16.373rem + 30.141vw, 43.5rem);
-  margin-inline: clamp(0rem, -8.187rem + 34.93vw, 23.25rem);
+  margin-inline: auto;
   background-color: white;
   border: 2px solid rgba(0, 0, 0, 1);
-  margin-bottom: 49px;
+  margin-bottom: 46px;
 }
 
 .card-title-block {
@@ -68,6 +69,12 @@
 .card-description-block {
   border-top: 2px solid black;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 23px;
+  padding-bottom: 25px;
+  
 }
 
 .card-title {
@@ -141,16 +148,10 @@
   line-height: 21px;
   text-align: left;
   width: 100%;
-  padding-top: 25px;
   padding-right: 25px;
   padding-left: 25px;
   font-size: var(--font-size);
   text-shadow: 2px 2px 4px rgba(223, 30, 181, 0.6);
-}
-
-.card-description-my-text {
-  padding-top: 27px;
-  padding-bottom: 24px;
 }
 
 .card__icon-button {
@@ -206,6 +207,7 @@
 }
 
 .card-and-footer__icon_like-button {
+  max-width: 130px;
   color: white;
   position: relative;
   display: flex;
@@ -214,6 +216,7 @@
   background-color: white;
   border: 2px solid rgba(0, 0, 0, 1);
   cursor: pointer;
+  justify-content: center;
 }
 
 .card-and-footer__icon_like-button::before {
@@ -233,7 +236,7 @@
   transform: scaleX(1);
 }
 
-.card__like-button:focus-visible {
+.card-and-footer__icon_like-button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
   transition: box-shadow 0.3s ease;
@@ -253,10 +256,7 @@
   width: 100%;
 }
 
-.footer__icon-button:focus-visible {
-  outline: none;
-  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
-}
+
 
 .window[open] {
   display: flex;
@@ -264,7 +264,6 @@
   align-items: center;
   border: 2px solid rgba(0, 0, 0, 1);
   width: clamp(21.313rem, 20.96rem + 1.502vw, 22.313rem);
-  overflow-x: hidden;
   padding: 0px;
 }
 
@@ -424,7 +423,6 @@
 
 @media (width <= 375px) {
   .footer__icon-button {
-    display: flex;
     flex-direction: column;
     margin: auto;
     margin-bottom: 100px;
@@ -445,13 +443,20 @@
   .window {
     max-width: 341px;
     width: 100%;
-    max-height: 191px;
-    height: 100%;
-    overflow-y: hidden;
   }
 
   .window-icon-text {
     max-width: 257px;
     width: 100%;
   }
+  
+  .window-text {
+    max-width: 198px;
+    width: 100%;
+  }
+
+  .card-description-block {
+    gap: 28px;
+  }
+
 }
